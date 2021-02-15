@@ -12,6 +12,8 @@ body {
     font-family: 'Asap', sans-serif;
     user-select: none;
     -webkit-user-select: none;
+    width: calc(100% - 50px);
+    line-height: 1.4;
 }
 
 a {
@@ -23,12 +25,21 @@ a {
     color: #FC4C02;
 }
 
+.section-title {
+    color: #000;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    margin: 1em 0;
+    text-transform: uppercase;
+}
+
 /* NAV */
 .side-bar {
     position: fixed;
     top: 0px;
     right: 0px;
-    width: 75px;
+    width: 50px;
     height: 100%;
     background-color: #fff;
     z-index: 10;
@@ -36,22 +47,26 @@ a {
 
 .side-bar-header {
     font-size: 1.5em;
-    margin: 20% 20px;
+    margin: 20% auto;
     writing-mode: vertical-rl;
     text-orientation: upright;
+}
+
+.side-bar-header:hover {
+    cursor: pointer;
 }
 
 .side-bar-footer {
     position: absolute;
     bottom: 1%;
-    right: 28px;
+    right: 12px;
     font-size: 1.5em;
 }
 
 .hamburger-btn {
     position: absolute;
     top:50%;
-    right: 50px;
+    right: 25px;
     height: 50px;
     width: 50px;
     cursor: pointer;
@@ -95,7 +110,7 @@ a {
 }
 
 nav {
-    z-index: 1;
+    z-index: 9;
     position: fixed;
     top: 0;
     right: -100%;
@@ -170,8 +185,8 @@ nav .links a:after {
     height: 6px;
     width: 0%;
     opacity: 0;
-    background: linear-gradient(270deg, #F0613C 0%, #F0783C 100%);
-    background: -webkit-linear-gradient(270deg, #F0613C 0%, #F0783C 100%);
+    background: linear-gradient(270deg, #ff7f00 0%, #f18b42 100%);
+    background: -webkit-linear-gradient(270deg, #ff7f00 0%, #f18b42 100%);
     transition: all 200ms ease-in-out;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
@@ -205,36 +220,168 @@ nav .links a:hover:after {
     -o-transform: translateY(-50%);
 }
 
+/* ABOUT */
+.about {
+    background: linear-gradient(270deg, #ff7f00 0%, #f18b42 100%);
+    background: -webkit-linear-gradient(270deg, #ff7f00 0%, #f18b42 100%);
+    display: flex;
+    overflow: hidden;
+}
+
+.about-image {
+    width: 33%;
+}
+
+.about-title {
+    text-align: center;
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 30px 0;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-info {
+    width: 67%;
+    padding: 0 50px;
+    color: #fff;
+}
+
+.works {
+    width: 90%;
+    margin: auto;
+}
+
+.work {
+    display: flex;
+    margin-bottom: 8em;
+}
+
+.work.right {
+    flex-direction: row-reverse;
+}
+
+.work-header {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    z-index: 1;
+}
+
+.work-header h2 {
+    font-size: 3em;
+    margin: 1em;
+}
+
+.work-header p {
+    width: 70%;
+    line-height: 1.4;
+}
+
+.work-content {
+    width: 67%;
+    position: relative;
+}
+
+.work-content:before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: -25%;
+    height: 80%;
+    width: 100%;
+    background-color: #ffbf80;
+    z-index: -1;
+}
+
+.work.right .work-content:before {
+    left: 25%;
+}
+
+.work-content img {
+    max-width: 100%;
+    border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -ms-border-radius: 0 0 5px 5px;
+    -o-border-radius: 0 0 5px 5px;
+}
+
 @media only screen and (max-width: 1024px) {
-    .side-bar {
-        width: 50px;
-    }
-
-    .side-bar-header {
-        margin: 20% auto;
-    }
-
-    .hamburger-btn {
-        right: 25px;
-    }
-
-    .side-bar-footer {
-        right: 12px;
-    }
-
     nav .links {
         left: 40%;
     }
 
     .hero .text {
+        left: 10%;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-info {
+        width: 100%;
+    }
+
+    .work {
+        margin-bottom: 2em;
+    }
+
+    .work, .work.right {
+        flex-direction: column-reverse;
+    }
+
+    .work-content:before  {
+        left: -5%;
+    }
+
+    .work.right .work-content:before {
         left: 5%;
-        font-size: 1.2em;
+    }
+
+    .work-header, .work-content {
+        width: 100%;
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
+
+    .section-title {
+        font-size: 2em;
+    }
     .hero .text {
         left: 2%;
+        font-size: 1em;
+    }
+
+    .about-title {
+        font-size: 1em;
+    }
+
+    .about-info {
+        padding: 10px;
+    }
+
+    .work-header h2 {
+        font-size: 1.4em;
+    }
+
+    .work-header p {
+        width: 100%;
         font-size: 1em;
     }
 }

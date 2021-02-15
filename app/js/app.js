@@ -5,4 +5,4 @@ function showNav() {
 
 particlesJS.load('particles-js', 'app/js/particles.json', function() {
     console.log('callback - particles.js config loaded');
-  });
+});
