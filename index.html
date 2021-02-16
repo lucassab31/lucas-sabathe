@@ -54,9 +54,12 @@
                 <h1>Freelance web developer</h1>
                 <h1>And also an IT student.</h1>
             </div>
+            <div class="down-arrow" onclick="down()">
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </div>
     </section>
-    <section class="about" id="about">
+    <section class="about slide-in" id="about">
         <div class="about-image">
             <img src="includes/me.jpg" alt="me">
         </div>
@@ -76,10 +79,13 @@
         <div class="section-title">
             <h1>Works</h1>
         </div>
-        <div class="work left">
+        <div class="work slide-in">
             <div class="work-header">
-                <h2>CMB_Photographie</h2>
-                <p style="text-indent: 15px;">Site web d'une photographe amatrice. Exposition de ses créations, affichage de ses informations, section d'avis et de question réponse. Gestion du site par un panel administrateur.</p>
+                <h2>CMB Photographie</h2>
+                <p style="text-indent: 15px;">
+                    Website of an amateur photographer. 
+                    Site web d'une photographe amatrice. Exposition de ses créations, affichage de ses informations, section d'avis et de question réponse. Gestion du site par un panel administrateur.
+                </p>
             </div>
             <div class="work-content">
                 <a href="https://cmb-photographie.fr" target="_blank" rel="noopener noreferrer">
@@ -88,7 +94,7 @@
             </div>
         </div>
 
-        <div class="work right">
+        <div class="work right slide-in">
             <div class="work-header">
                 <h2>Acase Cadeaux</h2>
                 <p style="text-indent: 15px;">Site web d'une photographe amatrice. Exposition de ses créations, affichage de ses informations, section d'avis et de question réponse. Gestion du site par un panel administrateur.</p>
@@ -100,7 +106,49 @@
             </div>
         </div>
     </section>
+    <section class="studies" id="studies">
+        <div class="section-title">
+            <h1>Studies</h1>
+        </div>
+        <div class="timeline">
+            <div class="container">
+                
+                <div class="timeline-item">
+                    <div class="timeline-img"></div>
+                    <div class="timeline-content slide-in">
+                        <h2>Technological University Degree</h2>
+                        <div class="date">2019 - 2021</div>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus deserunt quasi tempora quis. Corrupti hic, repellat laboriosam dolores aliquam libero eveniet in dolor mollitia temporibus deserunt sequi veniam maiores.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-img"></div>
+                    <div class="timeline-content slide-in">
+                        <h2>Pierre Paul Riquet High School</h2>
+                        <div class="date">2016 - 2019</div>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia doloribus deserunt quasi tempora quis. Corrupti hic, repellat laboriosam dolores aliquam libero eveniet in dolor mollitia temporibus deserunt sequi veniam maiores.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h1>Contact</h1>
+        </div>
+        <div class="contact-form">
+            
+        </div>
+    </section>
+    
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js"></script>
+    <script src="app/js/observer.js"></script>
     <script>
         const images = document.querySelectorAll('.work-content');
         new simpleParallax(images, {
