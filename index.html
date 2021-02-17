@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Sabathé</title>
+    <link rel="shortcut icon" href="includes/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="app/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js"></script>
@@ -138,6 +139,83 @@
 
             </div>
         </div>
+    </section>
+    <section class="contact slide-in" id="contact">
+
+            <div class="contact-form">
+                <h3 class="title">Contact</h3>
+                <form method="post" onsubmit="validation(this); return false;">
+                    <div class="form-control">
+                        <input type="text" name="name" id="name">
+                        <label for="name">Name</label>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                        <input type="email" name="email" id="mail">
+                        <label for="email">Email</label>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="subject" id="subject">
+                        <label for="subject">Subject</label>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                        <textarea name="message" id="message" placeholder="Messages"></textarea>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+                    <button type="submit">Send <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4 class="title">Information</h4>
+                <p class="text" style="text-indent: 15px;">
+                    You want more details or just say hi, send me a message or contact me on my social networks.
+                </p>
+                <div class="info">
+                    <div class="information">
+                        <i class="fas fa-phone"></i>
+                        <p><a href="tel:+33619588672">+33 6 19 58 86 72</a></p>
+                    </div>
+                    <div class="information">
+                        <i class="far fa-envelope"></i>
+                        <p><a href="mailto:contact@lucas-sabathe.fr">contact@lucas-sabathe.fr</a></p>
+                    </div>
+                    <div class="information">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Toulouse, France</p>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <p>Social networks :</p>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/lucas-sabath%C3%A9-950b181a0/" target="_blank" rel="noopener noreferrer">
+                            <div class="social linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </a>
+                        <a href="https://github.com/lucassab31" target="_blank" rel="noopener noreferrer">
+                            <div class="social git">
+                                <i class="fab fa-github"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/lucas_sabathe/" target="_blank" rel="noopener noreferrer">
+                            <div class="social insta">
+                                    <i class="fab fa-instagram"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
     </section>
    
 
