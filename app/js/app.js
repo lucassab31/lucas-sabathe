@@ -17,7 +17,6 @@ function down() {
 }
 
 var error = false;
-
 function validation(form) {
     error = false;
     var name = form.name;
@@ -30,7 +29,7 @@ function validation(form) {
         setErrorFor(name, "The name can't be null");
     } else {
         setSuccess(name);
-    }
+    }   
 
     if (email.value === '') {
         setErrorFor(email, "The email can't be null");
@@ -51,7 +50,7 @@ function validation(form) {
     }
 
     if (error == false) {
-        // form.submitF.submit();
+        form.submitF.submit();
     }
 }
 
@@ -65,5 +64,5 @@ function setErrorFor(input, message) {
 
 function setSuccess(input) {
     var formControl = input.parentElement;
-    formControl.className= "form-control success";
+    formControl.className= "form-control success focus orange";
 }

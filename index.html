@@ -15,6 +15,9 @@
 <body>
     <header>
         <div class="side-bar" >
+            <div class="side-bar-logo">
+                <img src="includes/favicon.png" alt="logo">
+            </div>
             <div class="side-bar-header" onclick="showNav()">
                 MENU
             </div>
@@ -140,34 +143,35 @@
             </div>
         </div>
     </section>
-    <section class="contact slide-in" id="contact">
-
+    <section class="contact" id="contact">
+        <div class="container slide-in">
             <div class="contact-form">
                 <h3 class="title">Contact</h3>
-                <form method="post" onsubmit="validation(this); return false;">
+                <form action="mail/mail.php" method="post" onsubmit="validation(this); return false;">
                     <div class="form-control">
-                        <input type="text" name="name" id="name">
+                        <input type="text" class="input" name="name" id="name">
                         <label for="name">Name</label>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small>Error message</small>
                     </div>
                     <div class="form-control">
-                        <input type="email" name="email" id="mail">
+                        <input type="email" class="input" name="email" id="email">
                         <label for="email">Email</label>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small>Error message</small>
                     </div>
                     <div class="form-control">
-                        <input type="text" name="subject" id="subject">
+                        <input type="text" class="input" name="subject" id="subject">
                         <label for="subject">Subject</label>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small>Error message</small>
                     </div>
                     <div class="form-control">
-                        <textarea name="message" id="message" placeholder="Messages"></textarea>
+                        <textarea name="message" class='input' id="message"></textarea>
+                        <label for="message">Message</label>
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small>Error message</small>
@@ -215,6 +219,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
     </section>
    
@@ -235,6 +240,26 @@
             var value = window.scrollY;
             parallax.style.top = 50 - (value * 0.1) + '%';
         })
+
+        inputs = document.querySelectorAll('.input');
+        inputs.forEach(input => {
+            input.addEventListener("focus", focusFunction);
+            input.addEventListener("blur", blurFunction);
+        });
+
+        function focusFunction() {
+            let parent = this.parentNode;
+            parent.classList.add("focus");
+        }
+
+        function blurFunction() {
+            let parent = this.parentNode;
+            if (this.value == "") {
+                parent.classList.remove("focus");
+            } else {
+                parent.classList.add("orange");
+            }
+        }
     </script>
 </body>
 </html>
