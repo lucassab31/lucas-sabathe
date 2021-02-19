@@ -422,7 +422,7 @@ nav .links a:hover:after {
 /* WORKS */
 
 .works {
-    padding: 10%;
+    padding: 5% 10% 0;
     margin: auto;
 }
 
