@@ -103,10 +103,14 @@ a {
 }
 
 .side-bar-footer {
+    text-align: center;
     position: absolute;
     bottom: 1%;
-    right: 12px;
     font-size: 1.5em;
+}
+
+.side-bar-footer img {
+    width: 50%;
 }
 
 .side-bar-footer a {

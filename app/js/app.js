@@ -3,9 +3,7 @@ function showNav() {
     document.getElementById("burger-bnt").classList.toggle("active");
 }
 
-particlesJS.load('particles-js', 'app/js/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-});
+
 
 function down() {
     element = document.getElementById("about");
@@ -65,4 +63,39 @@ function setErrorFor(input, message) {
 function setSuccess(input) {
     var formControl = input.parentElement;
     formControl.className= "form-control success focus orange";
+}
+
+const images = document.querySelectorAll('.work-content');
+new simpleParallax(images, {
+    delay: 0,
+    orientation: 'up',
+    scale: 1.3,
+    overflow: true
+});
+
+let parallax = document.getElementById("parallax");
+
+window.addEventListener('scroll', () => {
+    var value = window.scrollY;
+    parallax.style.top = 50 - (value * 0.1) + '%';
+})
+
+inputs = document.querySelectorAll('.input');
+inputs.forEach(input => {
+    input.addEventListener("focus", focusFunction);
+    input.addEventListener("blur", blurFunction);
+});
+
+function focusFunction() {
+    let parent = this.parentNode;
+    parent.classList.add("focus");
+}
+
+function blurFunction() {
+    let parent = this.parentNode;
+    if (this.value == "") {
+        parent.classList.remove("focus");
+    } else {
+        parent.classList.add("orange");
+    }
 }
