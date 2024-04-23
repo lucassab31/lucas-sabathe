@@ -12,33 +12,86 @@
     <header>
         <a href="mailto:sabathe.lucas@gmail.com">sabathe.lucas@gmail.com</a>
         <nav>
-            <a href="#projects">Projects</a>
-            <a href="#studies">Etudes</a>
-            <a href="#experiences">Expériences</a>
-            <a href="#contact">Contact</a>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#studies">Etudes</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
+        <div class="blur-shape" style="background-color: #4AC06F;"></div>
+        <div class="blur-shape" style="background-color: #22C3F1;"></div>
+        <div class="blur-shape" style="background-color: #9251F7;"></div>
+        <div class="blur-shape" style="background-color: #4AC06F;"></div>
+        <div class="blur-shape" style="background-color: #22C3F1;"></div>
+        <div class="blur-shape" style="background-color: #9251F7;"></div>
+        <div class="blur-shape" style="background-color: #516CF7;"></div>
     </header>
     <main>
-        <section>
+        <section id="hero">
+            <div id="left">
+                <picture>
+                    <!-- <source srcset="assets/images/hero.webp" type="image/webp"> -->
+                    <img src="assets/images/hero.png" alt="hero">
+                </picture>
+                
+                <div class="stick-container">
+                    <div class="stick-shape" style="background-color: #4AC06F; height: 300px;"></div>
+                    <div class="stick-shape" style="background-color: #22C3F1; height: 400px;"></div>
+                    <div class="stick-shape" style="background-color: #9251F7; height: 350px;"></div>
+                    <div class="stick-shape" style="background-color: #516CF7; height: 210px;"></div>
+                </div>
+            </div>
+            <div id="right">
+                <h1 class="title">Développeur<br>Full-Stack</h1>
+                <h2 class="subtitle">Lucas <span style="text-transform: uppercase;">sabathé</span></h2>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/lucas-sabath%C3%A9-950b181a0/" target="_blank" rel="noopener noreferrer">
+                        <!-- picture webp & png -->
+                        <picture>
+                            <source srcset="assets/images/linkedin.webp" type="image/webp">
+                            <img src="assets/images/linkedin.png" alt="linkedin">
+                        </picture>
+                    </a></li>
+                    <li><a href="https://github.com/lucassab31" target="_blank" rel="noopener noreferrer">
+                        <!-- picture webp & png -->
+                        <picture>
+                            <source srcset="assets/images/github.webp" type="image/webp">
+                            <img src="assets/images/github.png" alt="github">
+                        </picture>
+                    </a></li>
+                </ul>
+                <a href="#projects" class="button">Mes projets</a>
 
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <div>
-                <div>
-                    <h3>Project 1</h3>
-                    <p>Project 1 description</p>
-                </div>
-                <div>
-                    <h3>Project 2</h3>
-                    <p>Project 2 description</p>
-                </div>
-                <div>
-                    <h3>Project 3</h3>
-                    <p>Project 3 description</p>
+                <div class="stick-container">
+                    <div class="stick-shape" style="background-color: #4AC06F; height: 200px;"></div>
+                    <div class="stick-shape" style="background-color: #22C3F1; height: 300px;"></div>
+                    <div class="stick-shape" style="background-color: #9251F7; height: 250px;"></div>
+                    <div class="stick-shape" style="background-color: #516CF7; height: 210px;"></div>
                 </div>
             </div>
         </section>
+        
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const colors = ['#4AC06F', '#22C3F1', '#9251F7', '#516CF7'];
+            const shapes = document.querySelectorAll('.blur-shape');
+
+            shapes.forEach(shape => {
+                // Position aléatoire
+                const x = Math.floor(Math.random() * 100); // Position X aléatoire en pourcentage
+                const y = Math.floor(Math.random() * 80); // Position Y aléatoire, ajustée pour ne pas déborder du header
+
+                // Couleur aléatoire
+                const colorIndex = Math.floor(Math.random() * colors.length);
+                const color = colors[colorIndex];
+
+                shape.style.left = `${x}%`;
+                shape.style.top = `${y}px`;
+                shape.style.backgroundColor = color;
+            });
+        });
+    </script>
 </body>
 </html>
