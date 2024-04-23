@@ -122,7 +122,7 @@ body {
   font-size: 4rem;
   font-weight: 500;
   letter-spacing: 0.05rem;
-  line-height: 1;
+  line-height: normal;
   text-align: center;
   background-color: #A478E8;
   background-image: linear-gradient(90deg, #A478E8 0%, #516CF7 100%);
@@ -143,6 +143,8 @@ body {
 }
 
 .button {
+  border: none;
+  cursor: pointer;
   background: linear-gradient(90deg, #A478E8 0%, #516CF7 100%);
   padding: 8px 25px;
   color: #FFF;
@@ -158,6 +160,10 @@ body {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+.button.small {
+  padding: 6px 15px;
+  font-size: 1.5rem;
 }
 
 .blur-shape {
@@ -197,6 +203,29 @@ body {
     font-size: 1.5rem;
   }
 }
+section {
+  margin-top: 50px;
+}
+
+.icons {
+  margin: 20px 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons li {
+  margin: 0 10px;
+}
+.icons li img {
+  max-width: 30px;
+  max-height: 30px;
+}
+.icons li a img {
+  width: 30px;
+  height: 30px;
+}
+
 /* HEADER */
 header {
   background-color: #f8f8f8;
@@ -230,6 +259,7 @@ header nav ul li {
 }
 
 #hero {
+  border-bottom: 1px solid #e7e7e7;
   margin-top: 80px;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -237,7 +267,6 @@ header nav ul li {
   align-items: center;
 }
 #hero #left {
-  border: 1px solid #e7e7e7;
   width: 50%;
   height: calc(100vh - 80px);
   position: relative;
@@ -267,7 +296,6 @@ header nav ul li {
   -o-transform: rotate(45deg) translate(-50%, -50%);
 }
 #hero #right {
-  border: 1px solid #e7e7e7;
   width: 50%;
   height: calc(100vh - 80px);
   display: flex;
@@ -279,20 +307,6 @@ header nav ul li {
 }
 #hero #right .subtitle {
   margin-top: 20px;
-}
-#hero #right ul {
-  margin: 20px 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#hero #right ul li {
-  margin: 0 10px;
-}
-#hero #right ul li a img {
-  width: 30px;
-  height: 30px;
 }
 #hero #right .button {
   margin-top: 20px;
@@ -315,6 +329,98 @@ header nav ul li {
     width: 100%;
   }
   #hero #right {
+    width: 100%;
+  }
+}
+
+/* PROJECTS */
+#projects {
+  padding: 0 10%;
+}
+#projects .project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 50px 0 100px 0;
+  transform: translateX(-25%);
+  -webkit-transform: translateX(-25%);
+  -moz-transform: translateX(-25%);
+  -ms-transform: translateX(-25%);
+  -o-transform: translateX(-25%);
+  transition: all 600ms ease-in-out;
+  -webkit-transition: all 600ms ease-in-out;
+  -moz-transition: all 600ms ease-in-out;
+  -ms-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
+}
+#projects .project .project-image {
+  width: 67%;
+  position: relative;
+}
+#projects .project .project-image img {
+  max-width: 100%;
+}
+#projects .project .project-image:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background-color: #22C3F1;
+  z-index: -1;
+  opacity: 20%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#projects .project .project-info {
+  width: 33%;
+  text-align: center;
+}
+#projects .project .project-info h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #2E2E48;
+}
+#projects .project .project-info p {
+  margin-top: 10px;
+  color: #79819A;
+}
+#projects .project.reverse {
+  flex-direction: row-reverse;
+  transform: translateX(25%);
+  -webkit-transform: translateX(25%);
+  -moz-transform: translateX(25%);
+  -ms-transform: translateX(25%);
+  -o-transform: translateX(25%);
+}
+#projects .project.reverse .project-image:before {
+  left: -20px;
+}
+#projects .project.appear {
+  opacity: 1;
+  transform: translate(0);
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
+}
+@media (max-width: 768px) {
+  #projects .project {
+    flex-direction: column !important;
+  }
+  #projects .project .project-image {
+    width: 100%;
+    height: 200px;
+  }
+  #projects .project .project-image:before {
+    top: -10px;
+  }
+  #projects .project .project-info {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

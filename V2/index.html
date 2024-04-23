@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js"></script>
 </head>
+
 <body>
     <header>
-        <a href="mailto:sabathe.lucas@gmail.com">sabathe.lucas@gmail.com</a>
+        <a href="mailto:sabathe.lucas@gmail.com">💌 sabathe.lucas@gmail.com</a>
         <nav>
             <ul>
                 <li><a href="#projects">Projects</a></li>
@@ -34,7 +37,7 @@
                     <!-- <source srcset="assets/images/hero.webp" type="image/webp"> -->
                     <img src="assets/images/hero.png" alt="hero">
                 </picture>
-                
+
                 <div class="stick-container">
                     <div class="stick-shape" style="background-color: #4AC06F; height: 300px;"></div>
                     <div class="stick-shape" style="background-color: #22C3F1; height: 400px;"></div>
@@ -45,21 +48,24 @@
             <div id="right">
                 <h1 class="title">Développeur<br>Full-Stack</h1>
                 <h2 class="subtitle">Lucas <span style="text-transform: uppercase;">sabathé</span></h2>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/lucas-sabath%C3%A9-950b181a0/" target="_blank" rel="noopener noreferrer">
-                        <!-- picture webp & png -->
-                        <picture>
-                            <source srcset="assets/images/linkedin.webp" type="image/webp">
-                            <img src="assets/images/linkedin.png" alt="linkedin">
-                        </picture>
-                    </a></li>
-                    <li><a href="https://github.com/lucassab31" target="_blank" rel="noopener noreferrer">
-                        <!-- picture webp & png -->
-                        <picture>
-                            <source srcset="assets/images/github.webp" type="image/webp">
-                            <img src="assets/images/github.png" alt="github">
-                        </picture>
-                    </a></li>
+                <ul class="icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/lucas-sabath%C3%A9-950b181a0/" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source srcset="assets/images/icons/linkedin.webp" type="image/webp">
+                                <img src="assets/images/icons/linkedin.png" alt="linkedin">
+                            </picture>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/lucassab31" target="_blank" rel="noopener noreferrer">
+                            <picture>
+                                <source srcset="assets/images/icons/github.webp" type="image/webp">
+                                <img src="assets/images/icons/github.png" alt="github">
+                            </picture>
+                        </a>
+                    </li>
                 </ul>
                 <a href="#projects" class="button">Mes projets</a>
 
@@ -71,8 +77,56 @@
                 </div>
             </div>
         </section>
-        
+        <section id="projects">
+            <h3 class="title">Projets</h3>
+            <div class="project-container">
+                <div class="project slide-in">
+                    <div class="project-image">
+                        <picture>
+                            <!-- <source srcset="assets/images/project1.webp" type="image/webp"> -->
+                            <img src="assets/images/cmb.jpg" alt="project1">
+                        </picture>
+                    </div>
+                    <div class="project-info">
+                        <h4 class="subtitle">V-Loc Fleet</h4>
+                        <ul class="icons">
+                            <li>
+                                <img src="assets/images/icons/laravel.png" title="Laravel" alt="Icon Laravel">
+                            </li>
+                            <li>
+                                <img src="assets/images/icons/react.png" title="React.JS" alt="Icon React.JS">
+                            </li>
+                            <li>
+                                <img src="assets/images/icons/inertia.svg" title="Inertia JS" alt="Icon Inertia JS">
+                            </li>
+                            <li>
+                                <img src="assets/images/icons/antdesign.png" title="Ant Design" alt="Icon librairie de composant react Ant Design">
+                            </li>
+                        </ul>
+                        <button class="button small">Plus d'info</button>
+                    </div>
+                </div>
+                <div class="project slide-in reverse">
+                    <div class="project-image">
+                        <picture>
+                            <!-- <source srcset="assets/images/project1.webp" type="image/webp"> -->
+                            <img src="assets/images/cmb.jpg" alt="project1">
+                        </picture>
+                    </div>
+                    <div class="project-info">
+                        <h4 class="subtitle">CMB</h4>
+                        <ul class="icons">
+                            <li>
+                                <img src="assets/images/icons/php.png" title="PHP" alt="Icon PHP">
+                            </li>
+                        </ul>
+                        <button class="button small">Voir le projet</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <script src="assets/js/app.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const colors = ['#4AC06F', '#22C3F1', '#9251F7', '#516CF7'];
@@ -91,7 +145,16 @@
                 shape.style.top = `${y}px`;
                 shape.style.backgroundColor = color;
             });
+
+            const images = document.querySelectorAll('.project-image');
+            new simpleParallax(images, {
+                delay: 0,
+                orientation: 'up',
+                scale: 1.5,
+                overflow: true
+            });
         });
     </script>
 </body>
+
 </html>
