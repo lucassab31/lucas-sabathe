@@ -136,6 +136,7 @@ $color-4: #516CF7;
     letter-spacing: 0.05rem;
     line-height: normal;
     text-align: center;
+    text-transform: capitalize;
 
     background-color: $color-gradient-1;
     background-image: linear-gradient(90deg, $color-gradient-1 0%, $color-gradient-2 100%);
@@ -396,16 +397,16 @@ header {
 
         img {
             position: absolute;
-            bottom: 0;
+            top: 50%;
+            left: 50%;
             max-height: 100%;
             max-width: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            -webkit-transform: translateX(-50%);
-            -moz-transform: translateX(-50%);
-            -ms-transform: translateX(-50%);
-            -o-transform: translateX(-50%);
-        }
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+}
 
         .stick-container {
             top: 50%;
@@ -465,18 +466,18 @@ header {
 }
 
 /* PROJECTS */
-#projects {
+#projects, #experiences {
     padding: 0 10%;
     overflow: hidden;
     max-width: 1320px;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
 
     .project {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        margin: 50px 0 100px 0;
+        margin: 50px 0;
         transform: translateX(-25%);
         -webkit-transform: translateX(-25%);
         -moz-transform: translateX(-25%);
@@ -572,9 +573,118 @@ header {
             }
         }
     }
+
+    .experiences-container {
+        margin: 50px 0 0 0;
+
+        .experience {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            position: relative;
+            margin-bottom: 50px;
+
+            &::before {
+                content: "";
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                left: -28px;
+                width: 20px;
+                height: 20px;
+                background-color: #5531A7;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+
+            &::after {
+                content: "";
+                z-index: -2;
+                position: absolute;
+                top: 0;
+                left: -20px;
+                width: 4px;
+                height: 100%;
+                background-color: #E2E6EE;
+            }
+    
+            .experience-info-container{
+                width: 35%;
+                position: relative;
+    
+                .experience-info-duration {
+                    font-size: .8rem;
+                    color: $color-secondary;
+                }
+                .experience-info {
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+    
+                    img {
+                        max-width: 50px;
+                        max-height: 50px;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        -ms-border-radius: 10px;
+                        -o-border-radius: 10px;
+                    }
+    
+                    .experience-info-titles {
+                        h4 {
+                            font-size: 1.2rem;
+                            font-weight: 500;
+                            color: $color-primary;
+                        }
+    
+                        p {
+                            color: $color-secondary;
+                            font-size: 1rem;
+                        }
+                    
+                    }
+                }
+            }
+
+            .experience-content {
+                width: 65%;
+
+                p {
+                    color: $color-secondary;
+                    display: block;
+
+                    strong {
+                        font-weight: bold;
+                        color: $color-primary;
+                    }
+                }
+            }
+
+            // media query for experience
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 20px;
+
+                .experience-info-container {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding-left: 20px;
+                }
+
+                .experience-content {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
-#studies {
+#studies, #contact {
     position: relative;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
@@ -584,8 +694,12 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        gap: 20px;
+        // break the flexbox to column if the screen is smaller than 768px
+        flex-wrap: wrap;
 
         .study {
+            display: block;
             padding: 20px;
             min-width: 300px;
             background-color: #F6F6F6;
@@ -594,6 +708,8 @@ header {
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 10px;
+            text-decoration: none;
+            color: $color-primary;
 
             .study-header {
                 display: flex;

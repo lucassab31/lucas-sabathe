@@ -128,6 +128,7 @@ body {
   letter-spacing: 0.05rem;
   line-height: normal;
   text-align: center;
+  text-transform: capitalize;
   background-color: #A478E8;
   background-image: linear-gradient(90deg, #A478E8 0%, #516CF7 100%);
   background-clip: text;
@@ -357,15 +358,15 @@ header nav ul li:hover {
 }
 #hero #left img {
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
   max-height: 100%;
   max-width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 #hero #left .stick-container {
   top: 50%;
@@ -417,18 +418,18 @@ header nav ul li:hover {
 }
 
 /* PROJECTS */
-#projects {
+#projects, #experiences {
   padding: 0 10%;
   overflow: hidden;
   max-width: 1320px;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
 }
-#projects .project {
+#projects .project, #experiences .project {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin: 50px 0 100px 0;
+  margin: 50px 0;
   transform: translateX(-25%);
   -webkit-transform: translateX(-25%);
   -moz-transform: translateX(-25%);
@@ -440,14 +441,14 @@ header nav ul li:hover {
   -ms-transition: all 600ms ease-in-out;
   -o-transition: all 600ms ease-in-out;
 }
-#projects .project .project-image {
+#projects .project .project-image, #experiences .project .project-image {
   width: 67%;
   position: relative;
 }
-#projects .project .project-image img {
+#projects .project .project-image img, #experiences .project .project-image img {
   max-width: 100%;
 }
-#projects .project .project-image:before {
+#projects .project .project-image:before, #experiences .project .project-image:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -463,20 +464,20 @@ header nav ul li:hover {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-#projects .project .project-info {
+#projects .project .project-info, #experiences .project .project-info {
   width: 33%;
   text-align: center;
 }
-#projects .project .project-info h3 {
+#projects .project .project-info h3, #experiences .project .project-info h3 {
   font-size: 2rem;
   font-weight: 500;
   color: #2E2E48;
 }
-#projects .project .project-info p {
+#projects .project .project-info p, #experiences .project .project-info p {
   margin-top: 10px;
   color: #79819A;
 }
-#projects .project.reverse {
+#projects .project.reverse, #experiences .project.reverse {
   flex-direction: row-reverse;
   transform: translateX(25%);
   -webkit-transform: translateX(25%);
@@ -484,10 +485,10 @@ header nav ul li:hover {
   -ms-transform: translateX(25%);
   -o-transform: translateX(25%);
 }
-#projects .project.reverse .project-image:before {
+#projects .project.reverse .project-image:before, #experiences .project.reverse .project-image:before {
   left: -20px;
 }
-#projects .project.appear {
+#projects .project.appear, #experiences .project.appear {
   opacity: 1;
   transform: translate(0);
   -webkit-transform: translate(0);
@@ -496,33 +497,128 @@ header nav ul li:hover {
   -o-transform: translate(0);
 }
 @media (max-width: 768px) {
-  #projects .project {
+  #projects .project, #experiences .project {
     flex-direction: column !important;
   }
-  #projects .project .project-image {
+  #projects .project .project-image, #experiences .project .project-image {
     width: 100%;
     height: 200px;
   }
-  #projects .project .project-image:before {
+  #projects .project .project-image:before, #experiences .project .project-image:before {
     top: -10px;
   }
-  #projects .project .project-info {
+  #projects .project .project-info, #experiences .project .project-info {
+    width: 100%;
+  }
+}
+#projects .experiences-container, #experiences .experiences-container {
+  margin: 50px 0 0 0;
+}
+#projects .experiences-container .experience, #experiences .experiences-container .experience {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  margin-bottom: 50px;
+}
+#projects .experiences-container .experience::before, #experiences .experiences-container .experience::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: -28px;
+  width: 20px;
+  height: 20px;
+  background-color: #5531A7;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#projects .experiences-container .experience::after, #experiences .experiences-container .experience::after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 4px;
+  height: 100%;
+  background-color: #E2E6EE;
+}
+#projects .experiences-container .experience .experience-info-container, #experiences .experiences-container .experience .experience-info-container {
+  width: 35%;
+  position: relative;
+}
+#projects .experiences-container .experience .experience-info-container .experience-info-duration, #experiences .experiences-container .experience .experience-info-container .experience-info-duration {
+  font-size: 0.8rem;
+  color: #79819A;
+}
+#projects .experiences-container .experience .experience-info-container .experience-info, #experiences .experiences-container .experience .experience-info-container .experience-info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#projects .experiences-container .experience .experience-info-container .experience-info img, #experiences .experiences-container .experience .experience-info-container .experience-info img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#projects .experiences-container .experience .experience-info-container .experience-info .experience-info-titles h4, #experiences .experiences-container .experience .experience-info-container .experience-info .experience-info-titles h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2E2E48;
+}
+#projects .experiences-container .experience .experience-info-container .experience-info .experience-info-titles p, #experiences .experiences-container .experience .experience-info-container .experience-info .experience-info-titles p {
+  color: #79819A;
+  font-size: 1rem;
+}
+#projects .experiences-container .experience .experience-content, #experiences .experiences-container .experience .experience-content {
+  width: 65%;
+}
+#projects .experiences-container .experience .experience-content p, #experiences .experiences-container .experience .experience-content p {
+  color: #79819A;
+  display: block;
+}
+#projects .experiences-container .experience .experience-content p strong, #experiences .experiences-container .experience .experience-content p strong {
+  font-weight: bold;
+  color: #2E2E48;
+}
+@media (max-width: 768px) {
+  #projects .experiences-container .experience, #experiences .experiences-container .experience {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #projects .experiences-container .experience .experience-info-container, #experiences .experiences-container .experience .experience-info-container {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  #projects .experiences-container .experience .experience-content, #experiences .experiences-container .experience .experience-content {
     width: 100%;
   }
 }
 
-#studies {
+#studies, #contact {
   position: relative;
   border-top: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
   padding: 50px 10%;
 }
-#studies .studies-container {
+#studies .studies-container, #contact .studies-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-#studies .studies-container .study {
+#studies .studies-container .study, #contact .studies-container .study {
+  display: block;
   padding: 20px;
   min-width: 300px;
   background-color: #F6F6F6;
@@ -531,43 +627,45 @@ header nav ul li:hover {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  text-decoration: none;
+  color: #2E2E48;
 }
-#studies .studies-container .study .study-header {
+#studies .studies-container .study .study-header, #contact .studies-container .study .study-header {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-#studies .studies-container .study .study-header img {
+#studies .studies-container .study .study-header img, #contact .studies-container .study .study-header img {
   max-width: 50px;
   max-height: 50px;
 }
-#studies .studies-container .study .study-header h4 {
+#studies .studies-container .study .study-header h4, #contact .studies-container .study .study-header h4 {
   font-size: 1.5rem;
   font-weight: normal;
   color: #2E2E48;
   text-align: left;
 }
-#studies .studies-container .study .study-content {
+#studies .studies-container .study .study-content, #contact .studies-container .study .study-content {
   margin-top: 20px;
   color: #79819A;
 }
-#studies .studies-container .study .study-content .study-title {
+#studies .studies-container .study .study-content .study-title, #contact .studies-container .study .study-content .study-title {
   font-size: 1.25rem;
   font-weight: 500;
   color: #2E2E48;
 }
-#studies .studies-container .study .study-content .study-years {
+#studies .studies-container .study .study-content .study-years, #contact .studies-container .study .study-content .study-years {
   font-style: italic;
 }
 @media (max-width: 768px) {
-  #studies .studies-container {
+  #studies .studies-container, #contact .studies-container {
     flex-direction: column;
     gap: 20px;
   }
-  #studies .studies-container .study {
+  #studies .studies-container .study, #contact .studies-container .study {
     width: 100%;
   }
-  #studies .studies-container .study .study-header h4 {
+  #studies .studies-container .study .study-header h4, #contact .studies-container .study .study-header h4 {
     font-size: 1.25rem;
   }
 }/*# sourceMappingURL=style.css.map */
